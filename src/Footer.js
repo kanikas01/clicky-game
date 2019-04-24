@@ -1,13 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Footer() {
-  return (
-    <footer className="footer">
-      <div className="bottom">Clicky Game!
-        <img alt="react" src="assets/images/react.svg" />
-      </div>
-    </footer>
-  );
+class Footer extends Component {
+  render () {
+    return (
+      <footer className="footer">
+        <div className="bottom">Clicky Game!
+          <img alt="react" src="assets/images/react.svg" />
+        </div>
+      </footer>
+    );
+  }
 }
 
 export default Footer;
