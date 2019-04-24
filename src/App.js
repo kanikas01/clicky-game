@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.js';
 import Header from './components/Header.js';
 import GameContainer from './components/GameContainer.js';
 import Footer from './components/Footer.js';
+import images from "./components/images.json";
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div>
       <NavBar />
       <Header />
-      <GameContainer />
+      <GameContainer images={images}/>
       <Footer />
     </div>
   );

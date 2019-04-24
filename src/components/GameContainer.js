@@ -19,7 +19,9 @@ class GameContainer extends Component {
   render () {
     return (
       <div className="container">
-        <h1>YO</h1>
+      {this.props.images.map(image => (
+        <div role="img" aria-label="click item" className="click-item" key={image.id} style={{ backgroundImage: `url(${image.url})`}}></div>
+      ))}
       </div>
     );
   }
