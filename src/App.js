@@ -1,16 +1,16 @@
 import React from 'react';
-import NavBar from './NavBar.js';
-import Footer from './Footer.js';
-import Header from './Header.js';
+import NavBar from './components/NavBar.js';
+import Header from './components/Header.js';
+import GameContainer from './components/GameContainer.js';
+import Footer from './components/Footer.js';
+
 
 function App() {
   return (
     <div>
       <NavBar />
       <Header />
-      <main className="container">
-        Content
-      </main>
+      <GameContainer />
       <Footer />
     </div>
   );
