@@ -9,7 +9,7 @@ class GameContainer extends Component {
   };
 
   handleIncrement = (e) => {
-    this.setState({ score: this.state.score + 1 });
+    this.props.onPictureClick();
   };
 
   handleReset = () => {
@@ -39,7 +39,6 @@ class GameContainer extends Component {
   render () {
     return (
       <div className="container">
-        {this.state.score}<br />
       {this.shuffle(this.props.images).map(image => (
         <div 
           role="img" 
