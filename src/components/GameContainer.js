@@ -2,18 +2,8 @@ import React, { Component } from "react";
 
 class GameContainer extends Component {
 
-  // Set the initial state of the score component
-  state = {
-    score: 0,
-    clicked: []
-  };
-
-  handleIncrement = (e) => {
+  handlePictureClick = (e) => {
     this.props.onPictureClick(e);
-  };
-
-  handleReset = () => {
-    this.setState({ score: 0 });
   };
 
   shuffle = (array) => {
@@ -43,10 +33,10 @@ class GameContainer extends Component {
         <div 
           role="img" 
           aria-label="click item" 
-          className="click-item" 
+          className={this.props.className} 
           key={image.id}
           data-key={image.id}
-          onClick={this.handleIncrement}
+          onClick={this.handlePictureClick}
           style={{ backgroundImage: `url(${image.url})`}}>
         </div>
       ))}
