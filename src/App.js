@@ -13,7 +13,7 @@ class App extends Component {
     topScore: 0,
     message: "Click an image to begin!",
     imageClass: "click-item",
-    navClass: "correct"
+    navClass: ""
   };
 
   componentDidMount = () => {
