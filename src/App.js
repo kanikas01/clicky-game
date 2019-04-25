@@ -12,7 +12,8 @@ class App extends Component {
     score: 0,
     topScore: 0,
     message: "Click an image to begin!",
-    className: "click-item"
+    imageClass: "click-item",
+    navClass: "correct"
   };
 
   componentDidMount = () => {
@@ -29,7 +30,8 @@ class App extends Component {
             ? this.state.topScore + 1
             : this.state.topScore,
           message: "You chose wisely!",
-          className: "click-item"
+          imageClass: "click-item",
+          navClass: "correct"
         }
       );
       this.checked.push(key);
@@ -38,15 +40,13 @@ class App extends Component {
         { 
           score: 0,
           message: "You chose poorly!",
-          className: "click-item shake"
+          imageClass: "click-item shake",
+          navClass: "incorrect"
         }
       );
 
-      this.checked = [];
-      
+      this.checked = [];  
     }
-    
-    console.log(this.checked);
   };
 
   render () {
@@ -56,12 +56,13 @@ class App extends Component {
           message={this.state.message}
           score={this.state.score}
           topScore={this.state.topScore}
+          className={this.state.navClass}
         />
         <Header />
         <GameContainer 
           images={images}
           onPictureClick={this.playRound}
-          className={this.state.className}
+          className={this.state.imageClass}
         />
         <Footer />
       </div>
