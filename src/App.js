@@ -10,7 +10,8 @@ class App extends Component {
 
   state = {
     score: 0,
-    topScore: 0
+    topScore: 0,
+    message: "Click an image to begin!"
   };
 
   componentDidMount = () => {
@@ -20,11 +21,21 @@ class App extends Component {
   playRound = (e) => {
     let key = e.target.getAttribute("data-key");
     if (!this.checked.includes(key)) {
-      this.setState({ score: this.state.score + 1 });
+      this.setState(
+        { 
+          score: this.state.score + 1,
+          message: "You guessed correctly!" 
+        }
+      );
       this.checked.push(key);
     } else {
       alert("you lose")
-      this.setState({ score: 0 });
+      this.setState(
+        { 
+          score: 0,
+          message: "You guessed incorrectly!" 
+        }
+      );
       this.checked = [];
     }
     
@@ -35,6 +46,7 @@ class App extends Component {
     return (
       <div>
         <NavBar 
+          message={this.state.message}
           score={this.state.score}
           topScore={this.state.topScore}
         />
