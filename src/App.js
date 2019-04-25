@@ -9,26 +9,38 @@ import images from "./components/images.json";
 class App extends Component {
 
   state = {
-    score: 0
+    score: 0,
+    topScore: 0
   };
 
-  playRound = () => {
-    this.setState({ score: this.state.score + 1 });
+  componentDidMount = () => {
+    this.checked = [];
+  };
+
+  playRound = (e) => {
+    let key = e.target.getAttribute("data-key");
+    if (!this.checked.includes(key)) {
+      this.setState({ score: this.state.score + 1 });
+      this.checked.push(key);
+    } else {
+      alert("you lose")
+      this.setState({ score: 0 });
+      this.checked = [];
+    }
+    
+    console.log(this.checked);
   };
 
   render () {
-    const score = this.state.score;
-    const topScore = this.state.score;
     return (
       <div>
         <NavBar 
-          score={score}
-          topScore={topScore}
+          score={this.state.score}
+          topScore={this.state.topScore}
         />
         <Header />
         <GameContainer 
           images={images}
-          score={score}
           onPictureClick={this.playRound}
         />
         <Footer />

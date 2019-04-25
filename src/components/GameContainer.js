@@ -9,7 +9,7 @@ class GameContainer extends Component {
   };
 
   handleIncrement = (e) => {
-    this.props.onPictureClick();
+    this.props.onPictureClick(e);
   };
 
   handleReset = () => {
@@ -45,6 +45,7 @@ class GameContainer extends Component {
           aria-label="click item" 
           className="click-item" 
           key={image.id}
+          data-key={image.id}
           onClick={this.handleIncrement}
           style={{ backgroundImage: `url(${image.url})`}}>
         </div>
