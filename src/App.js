@@ -29,7 +29,7 @@ class App extends Component {
           topScore: this.state.topScore <= this.state.score
             ? this.state.topScore + 1
             : this.state.topScore,
-          message: "You chose wisely!",
+          message: "Choose wisely!",
           imageClass: "click-item",
           navClass: "correct"
         }
