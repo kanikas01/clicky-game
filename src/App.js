@@ -7,6 +7,10 @@ import images from "./components/images.json";
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.checked = [];
+  }
 
   state = {
     score: 0,
@@ -14,10 +18,6 @@ class App extends Component {
     message: "Click an image to begin!",
     imageClass: "click-item",
     navClass: ""
-  };
-
-  componentDidMount = () => {
-    this.checked = [];
   };
 
   playRound = (e) => {
